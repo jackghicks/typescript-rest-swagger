@@ -1,5 +1,5 @@
 {
-  "name": "@thrive-dev/typescript-rest-swagger",
+  "name": "@thrivesoft/typescript-rest-swagger",
   "version": "0.2.0",
   "description": "Generate Swagger files from a typescript-rest project",
   "keywords": [
