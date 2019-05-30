@@ -6,6 +6,10 @@
 # Swagger for Typescript-rest
 This is a tool to generate swagger files from a [typescript-rest](https://github.com/thiagobustamante/typescript-rest) project.
 
+## NOTE
+This is a temporary fork of [typescript-rest-swagger](https://github.com/thiagobustamante/typescript-rest-swagger) to solve @Security decorator mismatch with [typescript-rest](https://github.com/thiagobustamante/typescript-rest).
+The changes made allow the `@Security(['roles'])` usage defined in typescript-rest, automatically discovering appropriate securityDefinitions.  A pull request is open to merge this, if approved. 
+
 **Table of Contents** 
 
 - [Swagger for Typescript-rest](#swagger-for-typescript-rest)
