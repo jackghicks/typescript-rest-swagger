@@ -137,16 +137,11 @@ export class SpecGenerator {
                         if (missingScopes.length > 0) {
                             throw new Error(`The securityDefinition '${securityDecoratorInfo.name}' used on method '${controllerName}.${method.method}' is missing specified scope(s): '${missingScopes.join(',')}'`);
                         }
-                        pathMethod.security.push({[securityDecoratorInfo.name]: securityDecoratorInfo.scopes});
+                        pathMethod.security.push({[securityDecoratorInfo.name]: securityDecoratorInfo.scopes || []});
 
                     } else {
                         // when no name was specified, we need to find all those securityDefinitions whose scopes contain our specified scopes
-
-                        // prepare a list for all of the requiredScopes - even if there are none
-                        // found - so that we know by the end if all the required scopes were discovered)
                         const requiredScopes = securityDecoratorInfo.scopes || [];
-
-                        // define remainingScopes, and reassign to subtract as we account for them
                         let remainingScopes = requiredScopes;
 
                         // iterate over securityDefinitions, adding all with matching scopes
